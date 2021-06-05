@@ -74,7 +74,28 @@
       </div>
     </div>
   </header>
+   <section class="container-fluid section-2" style="width: 60%">
 
+    <div >
+       
+          
+          <p class="welcome-to-wework">
+          <b>Welcome to WeWork</b>
+          </p>
+
+          <p  class="make-a-life" >
+          
+          </p>
+
+          <p class="wework-description">
+            WeWork is a global network of workspaces where the companies and people grow together. We Transform
+          building into dynamic environments for creativity, focus, and connection. More than just the best place to work, though, this is a movement toward humanizing the work. We believe that CEOs can help each other, offices
+          can use the comforts of home, and we can all look forward to Monday if we find real meaning in what to do.
+          You focus on your business, we take care of the rest. From front-desk service to frest fruit water, utilities & security to employee events, amenities are all-inclusive and meaningful.
+          </p>
+       
+      </div>
+    </section>
 
   <section class="container-fluid section-2">
       <div class="welcome-card">
@@ -373,107 +394,37 @@
 
 
 
-<div class="scene">
+<div  class="scene">
    <div class="float-right deleteDiv"><i class="fa fa-times" aria-hidden="true"></i></div>
   
-  <div class="cube">
+  <!-- <div class="cube">
     <div class="cube__face cube__face--front">
      <h5 class="mt-4 name"></h5>
      <h5 class="lastName"></h5>
-     <h4 class="gender">front</h4>
+     <h4 class="gender"></h4>
   </div>
     <div class="cube__face cube__face--back">
      <h5 class="mt-4 name"></h5>
      <h5 class="lastName"></h5>
-     <h4 class="gender">front</h4>
+     <h4 class="gender"></h4>
   </div>
     <div class="cube__face cube__face--right">
      <h5 class="mt-4 name"></h5>
      <h5 class="lastName"></h5>
-     <h4 class="gender">front</h4>
+     <h4 class="gender"></h4>
     </div>
     <div class="cube__face cube__face--left">
        <h5 class="mt-4 name"></h5>
        <h5 class="lastName"></h5>
-     <h4 class="gender">front</h4>
-    </div>
+     <h4 class="gender"></h4>
+    </div>-->
 
   </div>
-</div>
+</div> 
 
 
 
-<script type="text/javascript">
+<script src="index.js"></script>
 
-  var cube = document.querySelector('.cube');
-var radioGroup = document.querySelector('.radio-group');
-var currentClass = '';
-
-var personArray=[];
-
-var cubeVal=["front","left","back","right"]
-
-function changeSide(showClassParameter) {
-  // var checkedRadio = radioGroup.querySelector(':checked');
-  var showClass = 'show-' + showClassParameter;
-    // console.log(showClass);
-  if ( currentClass ) {
-    cube.classList.remove( currentClass );
-  }
-  cube.classList.add( showClass );
-  currentClass = showClass;
-
-}
-
- function getValOfCube(){
-
-      setInterval(()=>{
-        // for (var i=0;i<4;i++){
-
-        //   setTimeout(()=>changeSide(cubeVal[i]),2000);
-        // }
-        setTimeout(()=>changeSide("front"),0);
-        setTimeout(()=>changeSide("right"),2000);
-        setTimeout(()=>changeSide("back"),4000);
-        setTimeout(()=>changeSide("left"),6000);
-      },12000)
-
-}
-
-
-$( document ).ready(function() {
-   getValOfCube();
-   $.ajax({
-        url: 'https://randomuser.me/api/?results=4',
-        dataType: 'json',
-        success: function(data) {
-          console.log(data);
-          personArray=data.results;
-         
-           // for (var i=0;i<personArray.length;i++){
-            personArray.forEach(function( item, index ) {
-               
-                $(".cube__face" ).each(function( index ) {
-                     $( this ).find(".name").text(personArray[index].name.title + " " + personArray[index].name.first) ;
-                     $( this ).find(".lastName").text(personArray[index].name.last) ;
-                     $( this ).find(".gender").text(personArray[index].gender) ;
-                  });
-
-
-             })
-
-        }
-    });
-
-
-    $(".deleteDiv").on("click",function () {
-
-         $(".scene").css("display","none")
-        });
-
-});
-
-
-</script>
 </body>
 </html>

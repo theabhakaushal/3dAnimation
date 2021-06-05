@@ -4,47 +4,50 @@
 body { font-family: sans-serif; }
 
 
-/*@keyframes rotate {
+.cube {
+  position: relative;
+  transform-style: preserve-3d;
+  animation-name: rotate;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  width: 150px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+@keyframes rotate {
   0% {
     transform: rotate3d(0, 0, 0, 0);
   }
   100% {
-    transform: rotate3d(0, 1, 0, 360deg); 
+    transform: rotate3d(0, 1, 0, 360deg); /*controls rotation amount on one axis) */
     ;
   }
 }
 
-*/
+
+.cube {
+  transform: rotateX(90deg) rotateY(90deg);
+}
+
+
 
 .scene {
-  width: 200px;
+  width: 230px;
   height: 170px;
-  /*border: 1px solid #CCC;*/
-  /*margin: 80px;*/
+
   perspective: 400px;
   position: fixed;
-  bottom: 0;
-  left: 50px;
+  bottom:10%;
+  left: 8%;
   z-index:999;
 }
 
-.cube {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  transform-style: preserve-3d;
-  transform: translateZ(-100px);
-  transition: transform 1s;
 
- /*   position: relative;
-  transform-style: preserve-3d;
-  animation-name: rotate;
-  animation-duration: 40s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;*/
-  
-    
-}
 
 .cube.show-front  { transform: translateZ(-100px) rotateY(   0deg); }
 .cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
@@ -54,7 +57,7 @@ body { font-family: sans-serif; }
 .cube__face {
   position: absolute;
   width: 150px;
-  height: 150px;
+  height: 140px;
   border: 1px solid black;
   /*line-height: 200px;*/
   font-size: 40px;
@@ -79,7 +82,9 @@ body { font-family: sans-serif; }
 label { margin-right: 10px; }
 
 
-
+#theImg{
+	width: 100%
+}
 
 
   .carousel-inner img {
